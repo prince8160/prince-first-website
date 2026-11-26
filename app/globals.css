@@ -177,6 +177,8 @@ body { font-family: "Avenir Next", Avenir, "Segoe UI", sans-serif; background-im
 .hero::before { content: ''; position: absolute; z-index: -1; width: 54%; height: 70%; top: 12%; right: -8%; border-radius: 50%; background: radial-gradient(ellipse, #8061b51a 0%, transparent 68%); filter: blur(18px); pointer-events: none; }
 .hero h1, .about h2, .skills h2, .projects h2, .contact h2 { font-family: "Avenir Next", Avenir, "Segoe UI", sans-serif; font-weight: 550; }
 .hero h1 { letter-spacing: -.078em; }
+.hero-tagline { margin: 17px 0 0; color: #cbc5d4; font-size: 14px; line-height: 1.65; letter-spacing: .005em; }
+.hero-tagline + .hero-role { margin-top: 15px; }
 .hero-description, .about-copy, .section-intro, .projects-heading p, .contact-copy > p { color: #aaa6af; }
 .button, .project-link, .text-link, .social-links a { transition: transform .22s ease, color .22s ease, border-color .22s ease, background-color .22s ease; }
 .button-primary { box-shadow: 0 6px 22px #8d6bc122; }
