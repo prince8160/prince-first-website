@@ -161,3 +161,67 @@ button, input, textarea { font: inherit; }
   .about, .skills, .projects, .contact { padding-top: 24px; padding-bottom: 65px; }.about-grid { grid-template-columns: 1fr; gap: 24px; padding: 51px 0 37px; }.about-copy { max-width: 520px; }.skills { padding-left: 21px; padding-right: 21px; }.skills-layout { grid-template-columns: 1fr; gap: 26px; padding-top: 48px; }.projects-heading { display: block; padding: 48px 0 25px; }.projects-heading p { margin-top: 15px; }.project-grid { grid-template-columns: 1fr; gap: 36px; }.project-visual { height: clamp(205px, 58vw, 300px); }.project-card > p { min-height: 0; }.education { padding-bottom: 60px; }.education-inner { padding: 18px; gap: 13px; }.education-inner h2 { max-width: 260px; font-size: 13px; line-height: 1.5; }.education-tag { display: none; }.contact-grid { grid-template-columns: 1fr; gap: 38px; padding-top: 48px; }.site-footer { padding: 19px 21px; gap: 15px; flex-wrap: wrap; }.site-footer > span { order: 3; width: 100%; text-align: center; }.brand-name { font-size: 9px; }
 }
 @media (max-width: 390px) { .hero-actions { gap: 8px; }.button { padding: 12px 12px; gap: 8px; font-size: 10px; }.hero-art { height: 330px; }.art-frame { height: 270px; width: 205px; }.art-monogram { font-size: 135px; }.art-stamp { width: 68px; height: 68px; right: -2px; }.eyebrow { font-size: 8px; }.hero-index { display: none; } }
+
+/* Refinements for calmer hierarchy, consistent rhythm, and tactile interactions. */
+:root { --muted: #aaa6af; --hairline: rgba(255,255,255,.12); }
+body { font-family: "Avenir Next", Avenir, "Segoe UI", sans-serif; background-image: radial-gradient(ellipse at 78% 14%, rgba(116, 82, 166, .085), transparent 31rem); }
+.site-header { border-bottom-color: rgba(255,255,255,.09); }
+.brand-mark { border-radius: 8px; transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease; }
+.brand:hover .brand-mark { transform: rotate(-7deg); border-color: var(--purple); box-shadow: 0 0 24px #b394f72b; }
+.main-nav > a:not(.nav-contact) { position: relative; padding: 10px 0; }
+.main-nav > a:not(.nav-contact)::after { content: ''; position: absolute; left: 0; right: 100%; bottom: 3px; height: 1px; background: var(--purple); transition: right .25s ease; }
+.main-nav > a:not(.nav-contact):hover::after { right: 0; }
+.main-nav .nav-contact { transition: background .2s ease, border-color .2s ease, transform .2s ease; }
+.main-nav .nav-contact:hover { background: #b394f712; border-color: #8f76b5; transform: translateY(-1px); }
+.hero { isolation: isolate; }
+.hero::before { content: ''; position: absolute; z-index: -1; width: 54%; height: 70%; top: 12%; right: -8%; border-radius: 50%; background: radial-gradient(ellipse, #8061b51a 0%, transparent 68%); filter: blur(18px); pointer-events: none; }
+.hero h1, .about h2, .skills h2, .projects h2, .contact h2 { font-family: "Avenir Next", Avenir, "Segoe UI", sans-serif; font-weight: 550; }
+.hero h1 { letter-spacing: -.078em; }
+.hero-tagline { margin: 17px 0 0; color: #cbc5d4; font-size: 14px; line-height: 1.65; letter-spacing: .005em; }
+.hero-tagline + .hero-role { margin-top: 15px; }
+.hero-description, .about-copy, .section-intro, .projects-heading p, .contact-copy > p { color: #aaa6af; }
+.button, .project-link, .text-link, .social-links a { transition: transform .22s ease, color .22s ease, border-color .22s ease, background-color .22s ease; }
+.button-primary { box-shadow: 0 6px 22px #8d6bc122; }
+.button-primary:hover { box-shadow: 0 9px 28px #a886ed37; }
+.button-quiet:hover, .project-link:hover, .text-link:hover { transform: translateY(-2px); color: #fff; }
+.art-frame { transition: transform .45s cubic-bezier(.2,.8,.2,1), border-color .3s ease, box-shadow .3s ease; }
+.hero-art:hover .art-frame { transform: translateY(-5px); border-color: #8b70b7; box-shadow: 0 40px 100px #0009, 0 0 38px #b394f71c, inset 0 0 50px #a985ec12; }
+.art-stamp { transition: transform .35s ease, background-color .3s ease; }
+.hero-art:hover .art-stamp { transform: rotate(0deg) scale(1.04); background: #241d2e; }
+.about, .skills, .projects, .contact { padding-top: 34px; }
+.about-grid { padding-top: 82px; padding-bottom: 58px; }
+.about-copy { font-size: 13.5px; line-height: 1.95; }
+.skill-row { transition: padding .22s ease, color .22s ease, background-color .22s ease; }
+.skill-row:hover { padding-left: 9px; color: #fff; background: linear-gradient(90deg, #b394f70d, transparent); }
+.skill-row:hover svg { transform: translate(2px,-2px); }
+.skill-row svg { transition: transform .22s ease; }
+.project-card { padding: 0 0 16px; border-bottom: 1px solid transparent; transition: border-color .25s ease, transform .3s ease; }
+.project-card:hover { transform: translateY(-5px); border-bottom-color: #b394f74d; }
+.project-visual { border: 1px solid rgba(255,255,255,.08); border-radius: 5px; transition: box-shadow .3s ease, border-color .3s ease; }
+.project-card:hover .project-visual { border-color: #b394f766; box-shadow: 0 18px 45px #0004; }
+.mock-browser { transition: transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s ease; }
+.project-card:hover .mock-browser { transform: translateY(-3px) scale(1.025); box-shadow: 0 22px 45px #13101848; }
+.project-meta { color: #a39ea8; }
+.project-card > p { color: #aaa6af; }
+.education-inner { border-radius: 8px; transition: border-color .25s ease, background-color .25s ease; }
+.education-inner:hover { border-color: #625073; background: #1b191e; }
+.contact-form input, .contact-form textarea { border-radius: 5px; padding: 14px 15px; }
+.contact-form input:hover, .contact-form textarea:hover { border-color: #51485c; }
+.form-submit { min-height: 44px; }
+.social-links a:hover { color: white; transform: translateY(-2px); }
+.social-links a:hover .social-glyph { border-color: var(--purple); background: #b394f714; }
+.site-footer { min-height: 90px; }
+.back-top:hover { color: #e8dcff; }
+@media (max-width: 760px) {
+  .hero { padding-top: 72px; padding-bottom: 86px; }
+  .hero-art { margin-top: 25px; }
+  .about, .skills, .projects, .contact { padding-top: 26px; }
+  .about-grid { padding-top: 56px; padding-bottom: 42px; }
+  .projects-heading { padding-top: 50px; }
+  .project-card:hover { transform: none; }
+  .project-card:active .project-visual { transform: scale(.99); }
+  .main-nav { box-shadow: 0 16px 32px #0004; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}

@@ -42,6 +42,7 @@ export function Portfolio() {
         <div className="hero-content">
           <div className="eyebrow"><span className="status-dot" /> AVAILABLE TO LEARN & COLLABORATE</div>
           <h1>Hi, I&apos;m<br /><span>Prince Kalla.</span></h1>
+          <p className="hero-tagline">Building my future, one website at a time.</p>
           <p className="hero-role">Aspiring Web Developer <span className="role-rule" /></p>
           <p className="hero-description">I enjoy building modern, responsive and user-friendly websites.</p>
           <div className="hero-actions"><a className="button button-primary" href="#projects">View My Projects <ArrowRight size={16} /></a><a className="button button-quiet" href="#contact">Contact Me <ArrowUpRight size={16} /></a></div>
